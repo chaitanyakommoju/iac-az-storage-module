@@ -1,46 +1,48 @@
 variable "storage_account_name" {
-  description = "Name of the Storage Account"
+  description = "Name of the storage account."
   type        = string
 }
 
 variable "resource_group_name" {
-  description = "Name of the Resource Group"
+  description = "Name of the resource group."
   type        = string
 }
 
 variable "location" {
-  description = "Azure region"
+  description = "Location of the storage account."
   type        = string
 }
 
 variable "account_tier" {
-  description = "Storage account tier"
+  description = "Storage account tier (Standard, Premium)."
   type        = string
   default     = "Standard"
 }
 
 variable "account_replication_type" {
-  description = "Replication type"
+  description = "Replication type (LRS, GRS, ZRS, RAGRS)."
   type        = string
   default     = "LRS"
 }
 
-variable "container_name" {
-  description = "Name of the Blob Container"
+variable "account_kind" {
+  description = "Kind of storage account (BlobStorage, FileStorage, Storage, StorageV2)."
   type        = string
+  default     = "StorageV2"
 }
 
-variable "container_access_type" {
-  description = "Access type of the Blob Container"
+variable "access_tier" {
+  description = "Access tier for BlobStorage and StorageV2 (Hot, Cool)."
   type        = string
-  default     = "private"
+  default     = "Hot"
 }
 
 variable "tags" {
-  description = "Tags to apply to resources"
+  description = "Tags for the storage account."
   type        = map(string)
   default     = {}
 }
+
 variable "orgname" {
   description = "Organization Name"
   type        = string

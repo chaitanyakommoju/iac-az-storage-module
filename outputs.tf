@@ -1,19 +1,14 @@
 output "storage_account_id" {
-  description = "ID of the Storage Account"
   value       = azurerm_storage_account.this.id
+  description = "The ID of the Storage Account"
 }
 
 output "storage_account_name" {
-  description = "Name of the Storage Account"
   value       = azurerm_storage_account.this.name
+  description = "The name of the Storage Account"
 }
 
-output "container_id" {
-  description = "ID of the Storage Container"
-  value       = azurerm_storage_container.this.id
-}
-
-output "container_name" {
-  description = "Name of the Storage Container"
-  value       = azurerm_storage_container.this.name
+output "primary_blob_endpoint" {
+  value       = azurerm_storage_account.this.primary_blob_endpoint
+  description = "The Primary Blob endpoint of the Storage Account"
 }
